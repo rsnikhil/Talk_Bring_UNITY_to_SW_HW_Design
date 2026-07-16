@@ -1,0 +1,46 @@
+= README for talk: "Bringing UNITY to Software and Hardware Design"
+Rishiyur S. Nikhil, (c) 2026
+:revnumber: v1.0
+:revdate: 2026-07-16
+:sectnums:
+:toc:
+:toclevels: 5
+:toc: left
+:toc-title: Contents
+:description: Keynote talk at SERI 2026, at IIIT Hyderabad
+:keywords: BSV, HW-SW Codesign, Accelerators, FPGAs, Custom Logic
+:data-uri:
+
+This repo contains slides for a talk entitled:
+
+    Bringing UNITYto Software and Hardware Design
+    Some Rules for the game
+    by Rishiyur S. Nikhil
+    at the SERI 2026 meeting an IIIT Hyderabad, July 17, 2026
+
+Everything in this repo is free and open-source.
+
+The `Code/` directory contains all the source codes and build scripts
+for building the examples used in the talk.
+
+The main code is in `Code/src_BSV/` and is written in the **BSV** Hardware design language.
+
+Auxiliary code is in various directories in `Code/vendor/` which are
+pulled from various other repos. These include the full source codes
+for the Drum and Fife RISC-V CPUs, whose details can be found at
+https://github.com/rsnikhil/Learn_Bluespec_and_RISCV_Design[THIS LINK^].
+
+To build, you will need an installation of the free and open-source
+*bsc* compiler for **BSV**, which can be found at
+https://github.com/B-Lang-org/bsc[THIS LINK^].
+
+Then, in `Code/Build/Drum` or `Code/Build/Fife`, various targets of
+`make` will build the CPU+Accelerator+Memory system and run it on
+various RISC-V codes.  Just typing `make` with no targets provides
+help on what can be built.
+
+When running the RISC-V CPUs, the file `test.memhex32` must point at
+one of the .memhex32 files iun `Code/RISCV_binaries`.  Some of the
+binaries run "Vector Add" software on the CPU, for various vector
+sizes like 100 and 200.  One of the binaries runs the computation on
+an attached hardware accelerator for vector size 100.

@@ -1,0 +1,26 @@
+{
+  // Name of the vendored-in project
+  name: "Drum_Fife",
+
+  // Target directory: typically equal to the name
+  // All imported code is copied into this directory
+  target_dir: "Drum_Fife",
+
+  // Git upstream source code repository
+  upstream: {
+    // Upstream Git repository URL. HTTPS URLs are preferred.
+    url: "https://github.com/rsnikhil/Learn_Bluespec_and_RISCV_Design",
+    // Upstream revision or branch. Can be a commit hash or a branch name.
+    rev: "main",
+  },
+
+  // Optional: Pick specific files or subdirectories from upstream and
+  // specify where to put them.
+  mapping: [
+    {from: 'Code/src_Common',  to: 'src_Common'},
+    {from: 'Code/src_Drum',    to: 'src_Drum'},
+    {from: 'Code/src_Fife',    to: 'src_Fife'},
+    {from: 'Code/src_Top',     to: 'src_Top'},
+    {from: 'Code/Tools',       to: 'Tools'},
+  ]
+}
